@@ -23,20 +23,46 @@ namespace Assignment
                 end--;
             }
         }
-            static void Main(string[] args)
+
+
+        static List<int> GetEvenNumbers(List<int> numbers)
+        {
+            List<int> evenNumbers = new List<int>();
+
+            foreach (int number in numbers)
+            {
+                if (number % 2 == 0)
+                {
+                    evenNumbers.Add(number); 
+                }
+            }
+
+            return evenNumbers;
+        }
+
+        static void Main(string[] args)
             {
                 #region Q1
-                ArrayList List = new ArrayList { 1, 2, 3, 4, 5 };
+                //ArrayList List = new ArrayList { 1, 2, 3, 4, 5 };
 
-                ReverseArrayList(List);
+                //ReverseArrayList(List);
 
               
-                foreach (var item in List)
-                {
-                    Console.Write(item + " ");
-                }
+                //foreach (var item in List)
+                //{
+                //    Console.Write(item + " ");
+                //}
 
-                #endregion
-            }
+            #endregion
+
+            #region Q2
+
+            List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            List<int> evenNumbers = GetEvenNumbers(numbers);
+
+            Console.WriteLine(string.Join(" ", evenNumbers));
+            #endregion
+        }
         }
     }
